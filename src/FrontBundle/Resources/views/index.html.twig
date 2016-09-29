@@ -1,0 +1,346 @@
+{% extends 'defaultLayout.html.twig' %}
+
+{% block currentAccueil %} class="current_page_item" {% endblock %}
+
+{% block content %}
+<section id="content" class="site-content">
+
+  <div id="sequence">
+    <span class="sequence-prev" alt="Previous" /><i class="fa fa-angle-left"></i></span>
+    <span class="sequence-next" alt="Next" /><i class="fa fa-angle-right"></i></span>
+
+    <ul class="sequence-canvas">
+
+
+
+      <li>
+        <div class="slide-title">HardWorkers</div>
+        <div class="slide-description"></div>
+        <a class="slide-arrow" href="{{ path('front_homepage') }}">Commencer</a>
+
+        <div class="bg" style="background: url('{{asset ('frontt/images/pre%cc%81paration-examens-sophrologie.jpg')}}') center center; -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; background-size: cover;">
+        </li>
+
+
+      </ul><!-- sequence-canvas -->
+    </div><!-- sequence -->
+
+
+    <div class="home-cta">
+      <div class="grid grid-pad">
+
+
+        <div class="col-10-12">
+          <h4>Notre but : se faire rencontrer stagiaires qualifiés et entreprises professionnalisantes</h4>
+        </div><!-- col-10-12 -->
+
+        <div class="col-2-12 push-right">
+          <a href="{{ path('front_homepage') }}"><button>Commencer</button></a>
+        </div><!-- col-2-12 -->
+
+      </div><!-- grid -->
+    </div><!-- home-cta -->
+
+
+
+
+
+    <div class="home-services">
+      <div class="grid home-divider-1">
+        <div class="col-1-2">
+          <aside id="text-4" class="widget widget_text">
+            <br />
+            <div class="textwidget"><div class="home-point">
+              <h5>Qui sommes-nous ?</h5><p>Hard Workers est constitué de professionnels des ressources humaines et des professeurs des grandes écoles afin de :</p>
+            </div>
+          </div>
+        </aside>
+        <div class="su-accordion">
+          <div class="su-spoiler su-spoiler-style-fancy su-spoiler-icon-plus"><div class="su-spoiler-title"><span class="su-spoiler-icon">
+          </span>Point 1</div><div class="su-spoiler-content su-clearfix"> Mettre en relation des stagiaires qualifiés et des professionnels.  </div></div>
+          <br /><div class="su-spoiler su-spoiler-style-fancy su-spoiler-icon-plus"><div class="su-spoiler-title"><span class="su-spoiler-icon">
+          </span>Point 2</div><div class="su-spoiler-content su-clearfix"> Veiller au bon déroulement de la transition école / vie active.  </div></div>
+        </div>
+      </div><!-- col-1-2 -->
+
+      <div class="col-1-2">
+
+        <!--<aside id="text-3" class="widget widget_text">			<div class="textwidget"><img class="aligncenter" src="{{ asset('frontt/images/dreamstime_xxl_11620953.png') }}" width="100%" ></div>
+      </aside>
+    -->
+    <br />
+    <br />
+    <video width="400" controls>
+      <source src="{{ asset("presentation.mp4")}}" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div><!-- col-1-2 -->
+
+
+  </div><!-- grid -->
+
+</div><!-- home-services -->
+
+
+
+
+
+<section id="etudiant"></section>
+<header style=" background: url('{{asset ('frontt/images/banner.jpg')}}');" class="entry-header">
+  <div class="grid grid-pad">
+    <div class="col-1-1">
+      <h1  class="entry-title"> Offres de stages</h1>        	</div><!-- .col-1-1 -->
+    </div><!-- .grid -->
+  </header>
+
+
+  <div class="grid grid-pad">
+    <div class="col-1-4 mobile-col-1-2">
+
+      <div class="works">
+        <a href="https://modernthemes.net/wordpress-demo/business/work/wordpress-camp/"><img width="400" height="300" src="https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/wordpress-camp-400x300.jpg" class="attachment-client size-client wp-post-image" alt="wordpress-camp"></a>
+        <h1 class="works-entry-title">Titre de l'offre  1</h1>
+        <p class="works-description">Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus…<br><a href="https://modernthemes.net/wordpress-demo/business/work/wordpress-camp/">Read More →</a></p>
+      </div><!-- works -->
+
+    </div><!-- col-1-4 -->
+
+    <div class="col-1-4 mobile-col-1-2">
+
+      <div class="works">
+        <a href="https://modernthemes.net/wordpress-demo/business/work/bennigans-social-media/"><img width="400" height="300" src="https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/slide1-400x300.jpg" class="attachment-client size-client wp-post-image" alt="slide1" srcset="https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/slide1-400x300.jpg 400w, https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/slide1-500x375.jpg 500w" sizes="(max-width: 400px) 100vw, 400px"></a>
+        <h1 class="works-entry-title">Titre de l'offre  2</h1>
+        <p class="works-description">Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus…<br><a href="https://modernthemes.net/wordpress-demo/business/work/bennigans-social-media/">Read More →</a></p>
+      </div><!-- works -->
+
+    </div><!-- col-1-4 -->
+
+
+
+    <div class="col-1-4 mobile-col-1-2">
+
+      <div class="works">
+        <a href="https://modernthemes.net/wordpress-demo/business/work/marketing-for-olympics/"><img width="400" height="300" src="https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/450867851-400x300.jpg" class="attachment-client size-client wp-post-image" alt="450867851" srcset="https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/450867851-400x300.jpg 400w, https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/450867851-500x375.jpg 500w" sizes="(max-width: 400px) 100vw, 400px"></a>
+        <h1 class="works-entry-title">Titre de l'offre 3</h1>
+        <p class="works-description">Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus…<br><a href="https://modernthemes.net/wordpress-demo/business/work/marketing-for-olympics/">Read More →</a></p>
+      </div><!-- works -->
+
+    </div><!-- col-1-4 -->
+
+
+
+    <div class="col-1-4 mobile-col-1-2">
+
+      <div class="works">
+        <a href="https://modernthemes.net/wordpress-demo/business/work/fifa-event-planning/"><img width="400" height="300" src="https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/Fifa-World-Cup-400x300.jpg" class="attachment-client size-client wp-post-image" alt="Fifa-World-Cup" srcset="https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/Fifa-World-Cup-400x300.jpg 400w, https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/Fifa-World-Cup-500x375.jpg 500w" sizes="(max-width: 400px) 100vw, 400px"></a>
+        <h1 class="works-entry-title">Titre de l'offre 4</h1>
+        <p class="works-description">Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus…<br><a href="https://modernthemes.net/wordpress-demo/business/work/fifa-event-planning/">Read More →</a></p>
+      </div><!-- works -->
+
+    </div><!-- col-1-4 -->
+    <br />
+    <div style="text-align:center;">
+          <a href="/hworkers/web/app_dev.php/"><button>Voir tous les offres de stages</button></a>
+        </div>
+        <br />
+        <br />
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="gallerie"></section>
+  <header style=" background: url('{{asset ('frontt/images/banner.jpg')}}');" class="entry-header">
+    <div class="grid grid-pad">
+      <div class="col-1-1">
+        <h1  class="entry-title"> Gallerie d'images</h1>        	</div><!-- .col-1-1 -->
+      </div><!-- .grid -->
+    </header>
+
+    <br />
+    <br />
+
+    <div class="row">
+
+      <div class="su-custom-gallery su-custom-gallery-title-never su-lightbox-gallery">
+
+        <div class="col-1-6" data-index="3">&nbsp;</div>
+
+        <div class="su-custom-gallery-slide col-1-6" data-index="0">
+          <a href="{{ asset('frontt/images/wided/1.jpg') }}" title="Fifa-World-Cup">
+            <img src="{{ asset('frontt/images/wided/1.jpg') }}" alt="Fifa-World-Cup" width="200" height="200">
+          </a>
+        </div>
+        <div class="su-custom-gallery-slide col-1-6" data-index="1">
+          <a href="{{ asset('frontt/images/wided/2.jpg') }}" title="450867851">
+            <img src="{{ asset('frontt/images/wided/2.jpg') }}" alt="450867851" width="200" height="200">
+          </a>
+        </div>
+        <div class="su-custom-gallery-slide col-1-6" data-index="3">
+          <a href="{{ asset('frontt/images/wided/6.jpg') }}" title="wordpress-camp">
+            <img src="{{ asset('frontt/images/wided/6.jpg') }}" alt="wordpress-camp" width="200" height="200">
+          </a>
+        </div>
+        <div class="su-custom-gallery-slide col-1-6" data-index="3">
+          <a href="{{ asset('frontt/images/wided/4.jpg') }}" title="wordpress-camp">
+            <img src="{{ asset('frontt/images/wided/4.jpg') }}" alt="wordpress-camp" width="200" height="200">
+          </a>
+        </div>
+        <div class="su-clear">
+        </div>
+      </div>
+    </div>
+    <br />
+
+
+
+
+
+
+
+
+
+    <section id="fondateurs"></section>
+    <header style=" background: url('{{asset ('frontt/images/banner2.jpg')}}');" class="entry-header">
+      <div class="grid grid-pad">
+        <div class="col-1-1">
+          <h1  class="entry-title"> Nos fondateurs</h1>        	</div><!-- .col-1-1 -->
+        </div><!-- .grid -->
+      </header><!-- .entry-header -->
+      <br />
+      <div class="grid grid-pad member" >
+        <div class="col-1-2">
+          <div class="col-1-2">
+            <img width="600" height="400" src="{{asset ('frontt/images/Sans-titre-2.jpg')}}" class="attachment-member size-member wp-post-image">              <h1 class="member-entry-title">Susan Roxbury-Gibbs</h1>
+          </div>
+          <div class="col-1-2">
+            <h6 class="member-title">Co-fondateur Hardworkers</h6>
+            <p class="member-description">15 ans d’expériences RH. Diplômée des Sciences Juridiques Politiques et Sociales et de l’ENA Tunis. Wided a travaillé longuement dans le domaine des RH liée aux nouvelles technologies puis dans le domaine de la formation professionnelle. Wided a fondé son agence <a href="http://www.lemeilleurestavenir.fr/">Le Meilleur est à Venir</a> depuis 2011 pour s’imposer en tant qu’agence garantissant une qualité irréprochable de recrutement et de formation. Avec plus de 3 000 heures d’entretiens, Wided a eu une expérience remarquée dans le domaine du recrutement et gestion des talents.</p>
+          </div>
+        </div><!-- col-1-3 -->
+
+        <div class="col-1-2">
+          <div class="col-1-2">
+            <img width="600" height="400" src="{{asset ('frontt/images/kais-mabrouk.jpg')}}" class="attachment-member size-member wp-post-image">              <h1 class="member-entry-title">Susan Roxbury-Gibbs</h1>
+          </div>
+          <div class="col-1-2">
+            <h6 class="member-title">Co-fondateur</h6>
+            <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div><!-- col-1-3 -->
+
+
+
+      </div><!-- grid -->
+      <br />
+      <br />
+      <br />
+
+
+
+      <section id="nous_soutenir">
+        <header style="background: url('{{asset ('frontt/images/banner1.jpg')}}')" class="entry-header">
+          <div class="grid grid-pad">
+            <div class="col-1-1">
+              <h1  class="entry-title"> Nous soutenir</h1>        	</div><!-- .col-1-1 -->
+            </div><!-- .grid -->
+          </header><!-- .entry-header -->
+          <div class="services">
+            <div class="grid grid-pad">
+              <div class="col-1-8">&nbsp;</div>
+              <div class="col-1-4">
+
+                <div  style="cursor:pointer" id="myBtn">
+                  <i class="fa fa-thumbs-o-up"></i>
+
+                  <h1 >Faire un don</h1>
+                  <p>Aidez l’association</p>
+                </div>
+
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">×</span>
+                    <p>Envoyez votre don à l’ordre de « HardWorkers » 53 avenue des ternes 75017 Paris</p>
+                  </div>
+                </div>
+              </div><!-- col-1-4 -->
+
+              <div class="col-1-4">
+
+                <div  style="cursor:pointer" id="myBtn2">
+                  <i class="fa fa-link"></i>
+
+                  <h1>Adhérer</h1>
+
+                  <p>Aidez l’association</p>
+                </div>
+
+                <div id="myModal2" class="modal">
+                  <div class="modal-content">
+                    <span class="close">×</span>
+                    <p>Some text in the Modal.2.</p>
+                  </div>
+                </div>
+              </div><!-- col-1-4 -->
+
+              <div class="col-1-4">
+
+                <div  style="cursor:pointer" id="myBtn3">
+                  <i class="fa fa-star"></i>
+
+                  <h1>Devenir bénévole</h1>
+
+                  <p>Aidez l’association</p>
+                </div>
+
+                <div id="myModal3" class="modal">
+                  <div class="modal-content">
+                    <span class="close">×</span>
+                    <p>Some text in the Modal.3.</p>
+                  </div>
+                </div>
+              </div><!-- col-1-4 -->
+
+            </div><!-- grid -->
+          </div>
+        </section>
+
+
+
+
+        <div class="home-cta">
+          <div class="grid grid-pad">
+
+
+            <div class="col-10-12">
+              <h4>where Smart People Meat Smart Ideas </h4>
+            </div><!-- col-10-12 -->
+
+            <div class="col-2-12 push-right">
+
+              <a href="indexcbc0.html?page_id=26">
+                <button>Commencer</button>
+              </a>
+
+            </div><!-- col-2-12 -->
+
+
+          </div><!-- grid -->
+        </div> <!-- home-cta -->
+
+
+
+      </section><!-- #content -->
+      {% endblock %}

@@ -1,0 +1,19 @@
+
+
+  
+
+       <form class="register-form" action="{{ path('fos_user_registration_register') }}" method="post">
+                <h3 class="font-green">Sign Up</h3>
+                
+                <p class="hint"> Enter your account details below: </p>
+                {{ form_widget(form) }}
+
+                <div class="form-actions">
+                    <button type="button" id="register-back-btn" class="btn green btn-outline">Back</button>
+                    
+                    <input  type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" id="register-submit-btn" class="btn btn-success uppercase pull-right" >
+                        Submit </input>
+                </div>
+         
+           
+</form>

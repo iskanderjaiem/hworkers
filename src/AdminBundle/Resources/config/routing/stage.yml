@@ -1,0 +1,18 @@
+stage_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:Stage:index" }
+    methods:  GET
+
+stage_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Stage:show" }
+    methods:  GET
+
+stage_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Stage:edit" }
+    methods:  GET
+
+stage_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Stage:new" }

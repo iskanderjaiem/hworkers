@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+    {% block head %}
+        <head>
+            <meta charset="utf-8" />
+            <title>Hworkers | Admin</title>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta content="width=device-width, initial-scale=1" name="viewport" />
+            <meta content="" name="description" />
+            <meta content="" name="author" />
+            <!-- BEGIN GLOBAL MANDATORY STYLES -->
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/font-awesome/css/font-awesome.min.css')}}"/>
+
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/simple-line-icons/simple-line-icons.min.css')}}"/>
+
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/bootstrap/css/bootstrap.min.css')}}"/>
+
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css')}}"/>
+
+            <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+
+            <!-- END GLOBAL MANDATORY STYLES -->
+            <!-- BEGIN THEME GLOBAL STYLES -->
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/css/components.min.css')}}"/>
+
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/css/plugins.min.css')}}"/>
+
+            <!-- END THEME GLOBAL STYLES -->
+            <!-- BEGIN THEME LAYOUT STYLES -->
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/layouts/layout/css/layout.min.css')}}"/>
+
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/layouts/layout/css/themes/darkblue.min.css')}}"/>
+
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/layouts/layout/css/custom.min.css')}}"/>
+
+            <!-- BEGIN PAGE LEVEL PLUGINS -->
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/select2/css/select2.min.css')}}"/>
+
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/select2/css/select2-bootstrap.min.css')}}"/>
+
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css')}}"/>
+
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css')}}"/>
+
+            <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css')}}"/>
+
+
+            <!-- END PAGE LEVEL PLUGINS -->
+            <!-- END THEME LAYOUT STYLES -->
+            <link rel="shortcut icon" href="favicon.ico" /> </head>
+        <!-- END HEAD -->
+    {% endblock %}
+
+    {% block header_imports %}
+    {% endblock %}
+    {% block header %}
+        <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+            <!-- BEGIN HEADER -->
+
+            <div class="page-header navbar navbar-fixed-top">
+                <!-- BEGIN HEADER INNER -->
+                <div class="page-header-inner ">
+                    <!-- BEGIN LOGO -->
+                    <div class="page-logo">
+                        <a target="_blank" href="{{ path('front_homepage')}}">
+                            <img src="{{asset('bundles/admin/assets/layouts/layout/img/logo.png')}}" alt="logo" class="logo-default" /> </a>
+                        <div class="menu-toggler sidebar-toggler">
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- END LOGO -->
+                    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span></span>
+                    </a>
+                    <!-- END RESPONSIVE MENU TOGGLER -->
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                    <div class="top-menu">
+                        <ul class="nav navbar-nav pull-right">
+                          <li class="dropdown dropdown-quick-sidebar-toggler">
+
+
+
+                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                    <a href="{{ path('fos_user_security_logout') }}" class="dropdown-toggle" class="clearfix">
+                                        Deconnexion <i class="icon-logout"></i>
+                                    </a>
+                                 {% else %}
+                                    <a class="dropdown-toggle" href="{{ path('fos_user_security_login') }}">Connexion<i class="icon-logout"></i></a>
+
+                                 {% endif %}
+                                </li>
+                                <!-- END QUICK SIDEBAR TOGGLER -->
+                            </ul>
+                        </div>
+                        <!-- END TOP NAVIGATION MENU -->
+                    </div>
+                    <!-- END HEADER INNER -->
+                </div>
+                {% endblock %}
+                    <!-- END HEADER -->
+                    <!-- BEGIN HEADER & CONTENT DIVIDER -->
+                    {% block rightSidebar %}
+                        <div class="clearfix"> </div>
+                        <!-- END HEADER & CONTENT DIVIDER -->
+                        <!-- BEGIN CONTAINER -->
+                        <div class="page-container">
+                            <!-- BEGIN SIDEBAR -->
+                            <div class="page-sidebar-wrapper">
+                                <!-- BEGIN SIDEBAR -->
+                                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                                <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                                <div class="page-sidebar navbar-collapse collapse">
+                                    <!-- BEGIN SIDEBAR MENU -->
+                                    <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+                                    <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+                                    <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+                                    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                                    <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+                                    <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                                    <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                                        <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                                        <li class="sidebar-toggler-wrapper hide">
+                                            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                                            <div class="sidebar-toggler">
+                                                <span></span>
+                                            </div>
+                                            <!-- END SIDEBAR TOGGLER BUTTON -->
+                                        </li>
+                                        <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+
+                                        <li class="nav-item start ">
+                                            <a href="{{ path('admin_homepage') }}" class="nav-link nav-toggle">
+                                                <i class="icon-home"></i>
+                                                <span class="title">Accueil</span>
+                                            </a>
+
+                                        </li>
+                                        <li class="heading">
+                                            <h3 class="uppercase">Rubriques</h3>
+                                        </li>
+
+
+                                        <li class="nav-item open">
+                                            <a href="javascript:;" class="nav-link nav-toggle">
+                                                <i class="fa fa-clone"></i>
+                                                <span class="title">Offre de stage</span>
+                                                <span class="arrow"></span>
+                                            </a>
+                                            <ul class="sub-menu" style="display: block;">
+                                                <li class="nav-item  ">
+                                                    <a href="{{ path('liste_stages') }}" class="nav-link ">
+                                                        <span class="title">Liste des stages</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item  ">
+                                                    <a href="{{ path('ajout_stage')}}" class="nav-link ">
+                                                        <span class="title">Ajouter un stage</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                    <!-- END SIDEBAR MENU -->
+                                    <!-- END SIDEBAR MENU -->
+                                </div>
+                                <!-- END SIDEBAR -->
+                            </div>
+                        {% endblock  %}
+                        <!-- END SIDEBAR -->
+                        {% block content %}
+                            <!-- BEGIN CONTENT -->
+                            <div class="page-content-wrapper">
+                                <!-- BEGIN CONTENT BODY -->
+                                <div class="page-content">
+                                    <!-- BEGIN PAGE HEADER-->
+
+                                    <!-- BEGIN PAGE BAR -->
+                                    <div class="page-bar">
+                                        <ul class="page-breadcrumb">
+                                            <li>
+                                                <a href="{{ path('admin_homepage') }}">Home</a>
+                                                <i class="fa fa-circle"></i>
+                                            </li>
+                                            <li>
+                                                <a href="#">Blank Page</a>
+                                                <i class="fa fa-circle"></i>
+                                            </li>
+                                            <li>
+                                                <span>Page Layouts</span>
+                                            </li>
+                                        </ul>
+                                        <div class="page-toolbar">
+                                            <div class="btn-group pull-right">
+                                                <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                                                    <i class="fa fa-angle-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right" role="menu">
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="icon-bell"></i> Action</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="icon-shield"></i> Another action</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="icon-user"></i> Something else here</a>
+                                                    </li>
+                                                    <li class="divider"> </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <i class="icon-bag"></i> Separated link</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END PAGE BAR -->
+                                    <!-- BEGIN PAGE TITLE-->
+                                    <h3 class="page-title"> Blank Page Layout
+                                        <small>blank page layout</small>
+                                    </h3>
+                                    <!-- END PAGE TITLE-->
+                                    <!-- END PAGE HEADER-->
+                                    <div class="note note-info">
+                                        <p> A black page template with a minimal dependency assets to use as a base for any custom page you create </p>
+                                    </div>
+                                </div>
+                                <!-- END CONTENT BODY -->
+                            </div>
+                            <!-- END CONTENT -->
+                        {% endblock  %}
+                        <!-- END CONTENT -->
+                        <!-- BEGIN FOOTER -->
+                        {% block footer %}
+                            <div class="page-footer">
+                                <div class="page-footer-inner"> 2016 &copy; Hworkers
+                               </div>
+                                <div class="scroll-to-top">
+                                    <i class="icon-arrow-up"></i>
+                                </div>
+                            </div>
+                        {% endblock  %}
+                        {% block scripts %}
+                            <!-- BEGIN CORE PLUGINS -->
+                            <script src="{{asset('bundles/admin/assets/global/plugins/jquery.min.js')}}"></script>
+                            <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+                            <script src="{{asset('bundles/admin/assets/global/plugins/js.cookie.min.js')}}"></script>
+                            <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js')}}"></script>
+                            <script src="{{asset('bundles/admin/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+                            <script src="{{asset('bundles/admin/assets/global/plugins/jquery.blockui.min.js')}}"></script>
+                            <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+
+                            <!-- END CORE PLUGINS -->
+                            <!-- BEGIN THEME GLOBAL SCRIPTS -->
+                            <script src="{{asset('bundles/admin/assets/global/scripts/app.min.js')}}"></script>
+
+                            <!-- END THEME GLOBAL SCRIPTS -->
+
+
+                            <!-- BEGIN THEME LAYOUT SCRIPTS -->
+                            <script src="{{asset('bundles/admin/assets/layouts/layout/scripts/layout.min.js')}}"></script>
+
+                            <script src="{{asset('bundles/admin/assets/layouts/layout/scripts/demo.min.js')}}"></script>
+
+                            <script src="{{asset('bundles/admin/assets/layouts/global/scripts/quick-sidebar.min.js')}}"></script>
+
+                            <!-- END THEME LAYOUT SCRIPTS -->
+
+                            <!-- BEGIN PAGE LEVEL PLUGINS -->
+                            <script src="{{asset('bundles/admin/assets/global/plugins/select2/js/select2.full.min.js')}}"></script>
+
+                            <script src="{{asset('bundles/admin/assets/global/plugins/jquery-validation/js/jquery.validate.min.js')}}"></script>
+
+                            <script src="{{asset('bundles/admin/assets/global/plugins/jquery-validation/js/additional-methods.min.js')}}"></script>
+
+                            <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+
+                            <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js')}}"></script>
+                            <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js')}}"></script>
+                            <script src="{{asset('bundles/admin/assets/global/plugins/ckeditor/ckeditor.js')}}"></script>
+                            <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap-markdown/lib/markdown.js')}}"></script>
+                            <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js')}}"></script>
+
+                            <!-- END PAGE LEVEL PLUGINS -->
+                            <!-- BEGIN PAGE LEVEL SCRIPTS -->
+                            <script src="{{asset('bundles/admin/assets/pages/scripts/form-validation.min.js')}}"></script>
+
+
+                        {% endblock %}
+                        {% block scripts_imports %}
+
+                        {% endblock %}
+                </body>
+            </html>

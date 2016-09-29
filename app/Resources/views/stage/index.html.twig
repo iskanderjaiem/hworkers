@@ -1,0 +1,36 @@
+{% extends 'defaultLayout.html.twig' %}
+
+{% block body %}
+    <h1>Stage list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stage in stages %}
+            <tr>
+                <td><a href="{{ path('stage_show', { 'id': stage.id }) }}">{{ stage.id }}</a></td>
+                <td>{{ stage.titre }}</td>
+                <td>{{ stage.description }}</td>
+                <td>{{ stage.image }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('stage_show', { 'id': stage.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

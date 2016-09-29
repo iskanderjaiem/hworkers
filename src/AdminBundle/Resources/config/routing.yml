@@ -1,0 +1,13 @@
+admin_stage:
+    resource: "@AdminBundle/Resources/config/routing/stage.yml"
+    prefix:   /stage
+
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: AdminBundle:Default:index }
+liste_stages:
+    path:     /liste_stages
+    defaults: { _controller: AdminBundle:Default:listeStages }
+ajout_stage:
+    path:     /ajout_stage
+    defaults: { _controller: AdminBundle:Default:ajoutStage }

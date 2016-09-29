@@ -1,0 +1,119 @@
+{% extends "svplocationAdminBundle::layout.html.twig" %}
+
+{% block content %}
+
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <!-- BEGIN CONTENT BODY -->
+        <div class="page-content">
+             <!-- BEGIN PAGE BAR -->
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <span>Ajouter un client</span>
+                    </li>
+                </ul>
+            </div><br />
+            <!-- END PAGE BAR -->
+            <!-- END PAGE TITLE-->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light portlet-fit portlet-form bordered">
+                        <div class="portlet-title">
+                          
+                    <div class="caption font-red-sunglo">
+                        <i class="icon-settings font-red-sunglo"></i>
+                        <span class="caption-subject bold uppercase"> Ajouter un client </span>
+                    </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <!-- BEGIN FORM-->
+
+                            <div>
+                               <form action="{{ path('clients_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+   
+  
+
+                                <div class="form-body">
+                                    <div class="alert alert-danger display-hide">
+                                        <button class="close" data-close="alert"></button> You have some form errors. Please check below. </div>
+                                    <div class="alert alert-success display-hide">
+                                        <button class="close" data-close="alert"></button> Your form validation is successful! </div>
+
+
+
+                                    <div class="row form-group">
+                                        <label class="control-label col-md-3">Nom de l'utilsateur : 
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                {{ form_widget(form.username) }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <label class="control-label col-md-3">Adresse mail : 
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                {{ form_widget(form.email) }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <label class="control-label col-md-3">Mot de passe : 
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                {{ form_widget(form.plainPassword.first) }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row form-group">
+                                        <label class="control-label col-md-3">Retaper le mot de passe : 
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                {{ form_widget(form.plainPassword.second) }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                              <input type="submit" class="btn btn-primary" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                 {{ form_rest(form) }}
+                                </form>
+                                <!-- END FORM-->
+                            </div>
+                        </div>
+                        <!-- END VALIDATION STATES-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END CONTENT BODY -->
+
+        <!-- END CONTENT -->  
+    {% endblock  %}

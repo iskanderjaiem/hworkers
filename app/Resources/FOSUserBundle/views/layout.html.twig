@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <meta charset="utf-8" />
+        <title> SVP |  Login </title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        
+     
+        <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/font-awesome/css/font-awesome.min.css')}}"/>
+        <link href="{{asset('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all')}}" rel="stylesheet"/>
+        <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/simple-line-icons/simple-line-icons.min.css')}}"/>
+        <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/bootstrap/css/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css')}}"/>
+       
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+         <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/select2/css/select2.min.css')}}"/>
+         <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/plugins/select2/css/select2-bootstrap.min.css')}}"/>
+       
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
+         <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/css/components.min.css')}}"/>
+         <link rel="stylesheet" href="{{asset('bundles/admin/assets/global/css/plugins.min.css')}}"/>
+       
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN PAGE LEVEL STYLES -->
+        <link rel="stylesheet" href="{{asset('bundles/admin/assets/pages/css/login.min.css')}}"/>
+       
+        <!-- END PAGE LEVEL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- END HEAD -->
+   
+    <body class="login">
+        <div>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>
+
+        {% for type, messages in app.session.flashBag.all %}
+            {% for message in messages %}
+                <div class="{{ type }}">
+                    {{ message|trans({}, 'FOSUserBundle') }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+ <div class="logo">
+     <a href="{{ path('svplocation_admin')}}"> </a>
+                <img href="{{asset('bundles/admin/assets/pages/img/logo-big.png')}}"/> </a>
+        </div>
+        <div>
+
+         {% block fos_user_content %}
+         {% endblock fos_user_content %}
+       
+         </div>
+        <div class="copyright"> 2016 © SVP Location </div>
+        <!--[if lt IE 9]>
+<script src="../assets/global/plugins/respond.min.js"></script>
+<script src="../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+       <script src="{{asset('bundles/admin/assets/global/plugins/jquery.min.js')}}"/>
+       <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap/js/bootstrap.min.js')}}"/>
+       
+       <script src="{{asset('bundles/admin/assets/global/plugins/js.cookie.min.js')}}"/>
+       
+       <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js')}}"/>
+       
+       <script src="{{asset('bundles/admin/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"/>
+       
+       <script src="{{asset('bundles/admin/assets/global/plugins/jquery.blockui.min.js')}}"/>
+       
+       <script src="{{asset('bundles/admin/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"/>
+       
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+         <script src="{{asset('bundles/admin/assets/global/plugins/jquery-validation/js/jquery.validate.min.js')}}"/>
+      
+         <script src="{{asset('bundles/admin/assets/global/plugins/jquery-validation/js/additional-methods.min.js')}}"/>
+      
+         <script src="{{asset('bundles/admin/assets/global/plugins/select2/js/select2.full.min.js')}}"></script>
+      
+       
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="{{asset('bundles/admin/assets/global/scripts/app.min.js')}}"></script>
+      
+        <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+         <script src="{{asset('bundles/admin/assets/pages/scripts/login.min.js')}}"></script>
+      
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <!-- END THEME LAYOUT SCRIPTS -->
+    </body>
+</html>

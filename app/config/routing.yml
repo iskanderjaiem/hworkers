@@ -1,0 +1,18 @@
+admin_stage:
+    resource: "@AdminBundle/Controller/StageController.php"
+    type:     annotation
+
+admin_stage:
+    resource: "@AdminBundle/Controller/StageController.php"
+    type:     annotation
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+front:
+    resource: "@FrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
