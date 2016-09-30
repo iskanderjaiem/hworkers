@@ -8,28 +8,32 @@ class DefaultController extends Controller
 {
   public function indexAction()
   {
-      return $this->render('FrontBundle::index.html.twig');
+    return $this->render('FrontBundle::index.html.twig');
   }
-  public function fondateursAction()
+
+  public function stagesAction()
   {
-      return $this->render('FrontBundle::fondateurs.html.twig');
+    $em = $this->getDoctrine()->getManager();
+
+    $stages = $em->getRepository('AdminBundle:Stage')->findAll();
+    return $this->render('FrontBundle::stages.html.twig', array('entities' => $stages));
   }
-  public function etudiantAction()
+
+
+  public function stageAction($id)
   {
-      return $this->render('FrontBundle::etudiant.html.twig');
-  }
-  public function professionnelAction()
-  {
-      return $this->render('FrontBundle::professionnel.html.twig');
-  }
-  public function nousSoutenirAction()
-  {
-      return $this->render('FrontBundle::nous_soutenir.html.twig');
-  }
-  public function nousContacterAction()
-  {
-      return $this->render('FrontBundle::nous_contacter.html.twig');
-  }
+    $query = $this->getDoctrine()->getManager()
+    ->createQuery('
+    SELECT a FROM AdminBundle:Stage a
+    WHERE a.id = :arg
+    ')
+    ->setParameter('arg', $id);
+
+
+      $stage =  $query->getSingleResult();
+
+  return $this->render('FrontBundle::stage.html.twig', array('id' => $stage->id));
+}
 
 
 }

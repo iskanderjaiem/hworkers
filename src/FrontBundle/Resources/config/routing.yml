@@ -2,22 +2,10 @@ front_homepage:
     path:     /
     defaults: { _controller: FrontBundle:Default:index }
 
-nos_fondateurs:
-    path:     /nos_fondateurs
-    defaults: { _controller: FrontBundle:Default:fondateurs }
+stages:
+    path:     /stages
+    defaults: { _controller: FrontBundle:Default:stages }
 
-etudiant:
-    path:     /etudiant
-    defaults: { _controller: FrontBundle:Default:etudiant }
-
-professionnel:
-    path:     /professionnel
-    defaults: { _controller: FrontBundle:Default:professionnel }
-
-nous_soutenir:
-    path:     /nous_soutenir
-    defaults: { _controller: FrontBundle:Default:nousSoutenir }
-
-nous_contacter:
-    path:     /nous_contacter
-    defaults: { _controller: FrontBundle:Default:nousContacter }
+stage:
+    path:     /stage/{id}
+    defaults: { _controller: FrontBundle:Default:stage }
