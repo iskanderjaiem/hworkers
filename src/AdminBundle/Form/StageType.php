@@ -5,7 +5,6 @@ namespace AdminBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class StageType extends AbstractType
 {
     /**
@@ -17,8 +16,7 @@ class StageType extends AbstractType
         $builder
             ->add('titre')
             ->add('description')
-            ->add('image')
-            ->add('submit', SubmitType::class, array('attr' => array('class' => 'btn sbold green')));
+            ->add('image');
     }
 
     /**

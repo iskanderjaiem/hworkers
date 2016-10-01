@@ -1,12 +1,11 @@
 <?php
-
 namespace AdminBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use AdminBundle\Entity\Stage;
 use AdminBundle\Form\StageType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * Stage controller.
@@ -51,16 +50,6 @@ class StageController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a Stage entity.
-     *
-     */
-    public function showAction(Stage $stage)
-    {
-
-        return $this->render('stage/show.html.twig', array(
-            'stage' => $stage));
-    }
 
     /**
      * Displays a form to edit an existing Stage entity.
@@ -68,8 +57,13 @@ class StageController extends Controller
      */
     public function editAction(Request $request, Stage $stage)
     {
-        $deleteForm = $this->createDeleteForm($stage);
-        $editForm = $this->createForm('AdminBundle\Form\StageType', $stage);
+        //$deleteForm = $this->createDeleteForm($stage);
+        $editForm = $this->createFormBuilder($stage)
+                  ->add('titre')
+                  ->add('description')
+                  ->add('image')
+                  ->add('submit', SubmitType::class, array('attr' => array('class' => 'btn sbold green')))
+                  ->getForm();
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -77,13 +71,13 @@ class StageController extends Controller
             $em->persist($stage);
             $em->flush();
 
-            return $this->redirectToRoute('stage_edit', array('id' => $stage->getId()));
+            return $this->redirectToRoute('liste_stages');
         }
 
         return $this->render('stage/edit.html.twig', array(
             'stage' => $stage,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+          //  'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -91,33 +85,22 @@ class StageController extends Controller
      * Deletes a Stage entity.
      *
      */
-    public function deleteAction(Request $request, Stage $stage)
+    public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($stage);
-        $form->handleRequest($request);
+          $em = $this->getDoctrine()->getManager();
+          $entity = $em->getRepository('AdminBundle:Stage')->find($id);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($stage);
-            $em->flush();
-        }
+          if (!$entity) {
+              throw $this->createNotFoundException('Unable to find Stage entity.');
+          }
 
-        return $this->redirectToRoute('stage_index');
+          $em->remove($entity);
+          $em->flush();
+
+
+
+        return $this->redirectToRoute('liste_stages');
     }
 
-    /**
-     * Creates a form to delete a Stage entity.
-     *
-     * @param Stage $stage The Stage entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Stage $stage)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('stage_delete', array('id' => $stage->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }
+
 }

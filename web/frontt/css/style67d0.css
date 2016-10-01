@@ -1327,7 +1327,7 @@ object {
    font-size: 20px;
     font-weight: 600;
     padding: 10px 0 40px;
-    text-transform: uppercase;
+   
     opacity: 0;
     z-index: 10;
 	right: -150%;

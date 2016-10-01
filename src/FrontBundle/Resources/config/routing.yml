@@ -9,3 +9,7 @@ stages:
 stage:
     path:     /stage/{id}
     defaults: { _controller: FrontBundle:Default:stage }
+
+postuler:
+    path:     /postuler/{id}
+    defaults: { _controller: FrontBundle:Default:postuler }

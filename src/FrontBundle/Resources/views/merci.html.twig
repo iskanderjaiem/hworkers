@@ -1,0 +1,39 @@
+{% extends 'defaultLayout.html.twig' %}
+
+{% block currentEtudiant %} class="current_page_item" {% endblock %}
+
+{% block content %}
+
+<br/>
+<section id="etudiant"></section>
+<header style=" background: url('{{asset ('frontt/images/banner.jpg')}}');" class="entry-header">
+  <div class="grid grid-pad">
+    <div class="col-1-1">
+      <h1  class="entry-title"> Demande envoyée</h1>        	</div><!-- .col-1-1 -->
+    </div><!-- .grid -->
+  </header>
+
+  <div class="grid grid-pad">
+
+    <br />
+    Merci, votre demande a bien été envoyée!
+    <br />
+    <br />
+    <div class="form-group row">
+      <div class="row">
+        <div class="col-md-5"><button class="btn sbold orange">←&nbsp;&nbsp;Liste des stages</button></div>
+        <div class="col-md-5"></div>
+        <div class="col-md-5">  </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+  </div>
+
+
+
+
+  {% endblock %}

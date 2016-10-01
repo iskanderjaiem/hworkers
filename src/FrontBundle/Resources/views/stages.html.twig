@@ -21,8 +21,8 @@
 
       <div class="works">
         <!--<a href="https://modernthemes.net/wordpress-demo/business/work/wordpress-camp/"><img width="400" height="300" src="https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/wordpress-camp-400x300.jpg" class="attachment-client size-client wp-post-image" alt="wordpress-camp"></a>
-        --><h1 class="works-entry-title">{{ entity.titre }}</h1>
-        <p class="works-description">{{ entity.description |striptags }}<br><a href="{{ path('stage', {'id': entity.id}) }}">Lire la suite →</a></p>
+        --><h1 class="works-entry-title">{{ entity.titre|slice(0, 100) }}</h1>
+        <p class="works-description">{{ entity.description |striptags|slice(0, 267) }}...<br><a href="{{ path('stage', {'id': entity.id}) }}">Lire la suite →</a></p>
       </div><!-- works -->
 
     </div><!-- col-1-4 -->

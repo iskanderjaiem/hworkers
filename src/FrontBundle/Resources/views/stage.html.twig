@@ -1,34 +1,64 @@
 {% extends 'defaultLayout.html.twig' %}
-
 {% block currentEtudiant %} class="current_page_item" {% endblock %}
-
 {% block content %}
-
 <br/>
 <section id="etudiant"></section>
 <header style=" background: url('{{asset ('frontt/images/banner.jpg')}}');" class="entry-header">
   <div class="grid grid-pad">
     <div class="col-1-1">
-      <h1  class="entry-title"> Stage</h1>        	</div><!-- .col-1-1 -->
-    </div><!-- .grid -->
-  </header>
+      <h1  class="entry-title"> Offre de stage</h1>
+    </div><!-- .col-1-1 -->
+  </div><!-- .grid -->
+</header>
 
-  <div class="grid grid-pad">
-
-
-
-      <div class="works">
-        <!--<a href="https://modernthemes.net/wordpress-demo/business/work/wordpress-camp/"><img width="400" height="300" src="https://modernthemes.net/wordpress-demo/business/wp-content/uploads/sites/7/2014/08/wordpress-camp-400x300.jpg" class="attachment-client size-client wp-post-image" alt="wordpress-camp"></a>
-        --><h1 class="works-entry-title">Stage n {{ id}}</h1>
-      </div><!-- works -->
-
-
-
+<div class="grid grid-pad">
+  <div class="col-12-12 work-content">
+    <br/>
+    <h5 class="works-entry-title">{{ stage.titre}}</h5>
     <br />
+    {{ stage.description | raw}}
+  </div><!-- work-content -->
+</div>
 
+<!-- #contact form-->
+<div class="grid grid-pad">
+  <div id="comments" class="comments-area">
+    <div id="respond" class="comment-respond"><br/>
+      <h3 id="reply-title" class="comment-reply-title">Postuler pour ce stage<small><a rel="nofollow" id="cancel-comment-reply-link" href="/wordpress-demo/business/shortcodes/posts/#respond" style="display:none;">Cancel reply</a></small></h3>
+
+      <!--<form action="https://modernthemes.net/wordpress-demo/business/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+    -->
+    {{ form_start(form_postuler)}}
+    <br/>
+    <div class="row">
+      <div class=".col-xs-6 .col-md-4">Nom et prénom *<br/>
+        {{ form_widget(form_postuler.nom, { 'class': 'comment-form-author' ,'type': 'text' ,'size': '30' ,'maxlength': '100' ,'aria-required': 'true' ,'required': 'required' ,'maxlength': '245' }) }}</p>
+      </div>
+      <div class="col-md-3.col-xs-6 .col-md-4">Email *<br/>
+        {{ form_widget(form_postuler.email, { 'class': 'comment-form-email' ,'type': 'email' ,'size': '30' ,'maxlength': '100' ,'aria-required': 'true' ,'required': 'required' ,'maxlength': '100' })}}</p>
+      </div>
+      <div class=".col-xs-6 .col-md-4"> Votre CV *<br/>
+        {{ form_widget(form_postuler.cv, { 'size': '30' ,'maxlength': '200' ,'aria-required': 'true' ,'required': 'required' })}}
+      </div>
+    </div>
+
+
+    <div class="row"><br/><br/><br/><br/>Commentaire *
+      {{ form_widget(form_postuler.commentaire,{ 'size': '130' ,'maxlength': '200' ,'aria-required': 'true' ,'required': 'required' })}}</p>
+
+    </div>
+
+    <br/>
+    <div style="text-align:center">{{ form_widget(form_postuler.postuler,{'label':'Postuler pour ce stage'})}}</div>
+    {{ form_rest(form_postuler)}}
+    {{ form_end(form_postuler)}}
+    <!--</form>-->
   </div>
+</div>
+</div>
+<br />
+<!-- #end contact form -->
 
+<br />
 
-
-
-  {% endblock %}
+{% endblock %}
