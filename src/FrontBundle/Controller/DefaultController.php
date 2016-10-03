@@ -47,10 +47,16 @@ class DefaultController extends Controller
       $em->persist($postulation);
       $em->flush();
 
-      $body="\n\n Stage ID : ".$id.
+      $em = $this->getDoctrine()->getManager();
+      $stage = $em->getRepository('AdminBundle:Stage')->find($id);
+
+      $body=
+            "\n\n\n ***** INFORMATION SUR LES CHAMPS DU FORMULAIRE ***** ".
+            "\n Stage ID : ".$id.
+            "\n Titre du stage : ".$stage->getTitre().
+            "\n\n\n ***** INFORMATION SUR L'ETUDIANT ***** ".
             "\n nom : ".$form_postuler["nom"]->getData().
             "\n email : ".$form_postuler["email"]->getData().
-            "\n cv : ".$form_postuler["cv"]->getData().
             "\n commentaire : ".$form_postuler["commentaire"]->getData();
 
       $message = \Swift_Message::newInstance()
@@ -59,7 +65,7 @@ class DefaultController extends Controller
       ->setTo('iskander.jaiem@esprit.tn')
       ->setBody($body)
       ->attach(\Swift_Attachment::fromPath('file/'.$file->getClientOriginalName()));
-      //$this->get('mailer')->send($message);
+      $this->get('mailer')->send($message);
 
       return $this->render('FrontBundle::merci.html.twig');
     }

@@ -63,7 +63,9 @@
 	<link href="{{ asset('frontt/css/font-awesome.min.css') }}"  rel="stylesheet">		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
 	<style type="text/css" id="custom-background-css">
 	body.custom-background { background-image: url('{{ asset('frontt/images/Sans-titre-5.jpg') }}'); background-repeat: repeat; background-position: top right; background-attachment: fixed; }
-	</style>
+	</style
+	{% block head_import %}
+	{% endblock %}
 </head>
 {% endblock %}
 

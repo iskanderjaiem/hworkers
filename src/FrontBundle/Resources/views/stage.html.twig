@@ -1,5 +1,11 @@
 {% extends 'defaultLayout.html.twig' %}
 {% block currentEtudiant %} class="current_page_item" {% endblock %}
+
+{% block head_import %}
+
+	<link rel="icon"  href="{{ asset('frontt/images/favicon.ico')}} " />
+{% endblock %}
+
 {% block content %}
 <br/>
 <section id="etudiant"></section>
