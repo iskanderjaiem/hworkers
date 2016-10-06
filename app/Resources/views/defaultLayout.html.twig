@@ -9,9 +9,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Accueil - HardWorkers</title>
+	<link rel="icon" href="{{ asset('frontt/images/favicon.ico')}}">
 
-
-	<link rel="apple-touch-icon" sizes="144x144" href="{{ asset('frontt/images/favicon.ico')}} " />
 
 	<link rel='stylesheet' id='business-font-awesome-css'  href="{{ asset('frontt/css/font-awesome.min268f.css')}} " type='text/css' media='all' />
 	<link rel='stylesheet' id='business-style-css'  href="{{ asset('frontt/css/style67d0.css?ver=4.5.4')}} " type='text/css' media='all' />
@@ -66,135 +65,155 @@
 	</style
 	{% block head_import %}
 	{% endblock %}
-</head>
-{% endblock %}
+	</head>
+	{% endblock %}
 
 
-{% block body %}
-<body class="home page page-id-17 page-template page-template-page-home page-template-page-home-php custom-background" class="no-js">
+	{% block body %}
+	<body class="home page page-id-17 page-template page-template-page-home page-template-page-home-php custom-background" class="no-js">
 
 	<div id="page" class="hfeed site">
-		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-		<header id="masthead" class="site-header" role="banner">
-			<div class="grid grid-pad head-overflow">
+	<header id="masthead" class="site-header" role="banner">
+	<div class="grid grid-pad head-overflow">
 
-				<div class="site-branding col-3-12 mobile-col-2-3">
-
-
-					<div class="site-logo">
-						<a href='{{ path('front_homepage')}}' title='HardWorkers' rel='home'><img src='{{ asset('frontt/images/test.png') }}'  alt='HardWorkers'></a>
-					</div>
+	<div class="site-branding col-3-12 mobile-col-2-3">
 
 
-				</div><!-- site-branding -->
+	<div class="site-logo">
+	<a href='{{ path('front_homepage')}}' title='HardWorkers' rel='home'><img src='{{ asset('frontt/images/test.png') }}'  alt='HardWorkers'></a>
+	</div>
 
-				<div class="col-9-12 mobile-col-1-3">
-					<nav id="site-navigation" class="main-navigation" role="navigation">
-						<a id="showLeft" class="mobileNav push-right"><i class="fa fa-bars"></i></a>
-						<div id="main-nav"><br /><div class="menu" style="padding-right:8em;"><ul><li {% block currentAccueil %}{% endblock %}><a href="{{ path('front_homepage')}}">Accueil</a></li><li {% block currentEtudiant %}{% endblock %}  class="page_item page-item-34"><a  class="scroll" href="#etudiant">Étudiant</a></li> <li {% block currentFondateurs %}{% endblock %} class="page_item page-item-28"><a  class="scroll" href="#fondateurs">Nos Fondateurs</a></li> <!-- <li {% block currentPro %}{% endblock %} class="page_item page-item-40"><a href="#">Professionnel</a></li>--><li {% block currentSoutenir %}{% endblock %}class="page_item page-item-42"><a href="#nous_soutenir">Nous soutenir</a></li><li {% block currentContact %}{% endblock %}class="page_item page-item-44"><a  class="scroll"  href="#contacter">Nous contacter</a></li></ul></div>
-					</div>
-				</nav><!-- #site-navigation -->
-			</div><!-- col-9-12 -->
 
-		</div><!-- grid -->
+	</div><!-- site-branding -->
+
+	<div class="col-9-12 mobile-col-1-3">
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+	<a id="showLeft" class="mobileNav push-right"><i class="fa fa-bars"></i></a>
+	<div id="main-nav">
+	<br />
+	<div class="menu" style="padding-right:8em;">
+	<ul>
+	<li {% block currentAccueil %}{% endblock %}><a href="{{ path('front_homepage')}}">Accueil</a></li>
+	<li {% block currentEtudiant %}{% endblock %}  class="page_item page-item-34"><a  class="scroll" href ="{{ path('front_homepage')}}#etudiant" onclick="window.location.href='{{ path('front_homepage')}}#etudiant'">Étudiant</a></li>
+	<li {% block currentPro %}{% endblock %} class="page_item page-item-40"><a href ="{{ path('front_homepage')}}#news" onclick="window.location.href='{{ path('front_homepage')}}#news'">News</a></li>
+	<li {% block currentFondateurs %}{% endblock %} class="page_item page-item-28"><a  class="scroll" href ="{{ path('front_homepage')}}#fondateurs" onclick="window.location.href='{{ path('front_homepage')}}#fondateurs'">Nos Fondateurs</a></li>
+	<li {% block currentSoutenir %}{% endblock %}class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nous_soutenir" onclick="window.location.href='{{ path('front_homepage')}}#nous_soutenir'">Nous soutenir</a></li>
+	<li {% block currentContact %}{% endblock %}class="page_item page-item-44"><a  class="scroll"  href ="{{ path('front_homepage')}}#contacter" onclick="window.location.href='{{ path('front_homepage')}}#contacter'">Nous contacter</a></li>
+	</ul>
+	</div>
+	</div>
+	</nav><!-- #site-navigation -->
+	</div><!-- col-9-12 -->
+
+	</div><!-- grid -->
 	</header><!-- #masthead -->
 
 	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-		<h3>Menu</h3>
-		<div class="menu"><ul><li class="current_page_item"><a href="{{ path('front_homepage')}}">Accueil</a></li><li class="page_item page-item-28"><a href="#fondateurs">Nos Fondateurs</a></li><li class="page_item page-item-34"><a href="#etudiant">Étudiant</a></li><!--<li class="page_item page-item-40"><a href="#pro">Professionnel</a></li>--><li class="page_item page-item-42"><a href="#nous_soutenir">Nous soutenir</a></li><li class="page_item page-item-44"><a href="#nous_contacter">Nous contacter</a></li></ul></div>
+	<h3>Menu</h3>
+	<div class="menu">
+	<ul>
+	<li class="current_page_item"><a href="{{ path('front_homepage')}}">Accueil</a></li>
+	<li class="page_item page-item-40"><a href ="{{ path('front_homepage')}}#news" onclick="window.location.href='{{ path('front_homepage')}}#news'">News</a></li>
+	<li class="page_item page-item-34"><a href="{{ path('front_homepage')}}#etudiant">Étudiant</a></li>
+	<li class="page_item page-item-28"><a href ="{{ path('front_homepage')}}#fondateurs" onclick="window.location.href='{{ path('front_homepage')}}#fondateurs'">Nos Fondateurs</a></li>
+	<li class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nous_soutenir" onclick="window.location.href='{{ path('front_homepage')}}#nous_soutenir'">Nous soutenir</a></li>
+	<li class="page_item page-item-44"><a href="#nous_contacter">Nous contacter</a></li>
+	</ul>
+	</div>
 	</nav>
 	{% block content %}
 
-{% endblock %}
-<footer id="colophon" class="site-footer" role="contentinfo">
+	{% endblock %}
+	<footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="grid grid-pad">
-		<div class="col-1-4">
-			<aside id="search-4" class="widget widget_search"><h5 class="widget-title">Rechercher</h5><form role="search" method="get" class="search-form" action="http://hworkers.fr/">
-				<label>
-					<span class="screen-reader-text">Rechercher&nbsp;:</span>
-					<input type="search" class="search-field" placeholder="Recherche&hellip;" value="" name="s" />
-				</label>
-				<input type="submit" class="search-submit" value="Rechercher" />
-			</form></aside>                </div><!-- col-1-4 -->
+	<div class="col-1-4">
+	<aside id="search-4" class="widget widget_search"><h5 class="widget-title">Rechercher</h5><form role="search" method="get" class="search-form" action="http://hworkers.fr/">
+	<label>
+	<span class="screen-reader-text">Rechercher&nbsp;:</span>
+	<input type="search" class="search-field" placeholder="Recherche&hellip;" value="" name="s" />
+	</label>
+	<input type="submit" class="search-submit" value="Rechercher" />
+	</form></aside>                </div><!-- col-1-4 -->
 
-			<div class="col-1-4">
-				<aside id="business_contact_info-3" class="widget business_contact_info_widget"><h5 class="widget-title">Nous Contacter</h5><div class="contact-address"><span>Address: </span>53 avenue des ternes 75017 Paris</div><div class="contact-phone"><span>Phone: </span>0951062304</div><div class="contact-email"><span>Email: </span><a href="mailto:wided.carpentier@hworkers.fr">wided.carpentier@hworkers.fr</a></div></aside>                </div><!-- col-1-4 -->
-
-
-				<div class="col-1-4">
-					<!--	<aside id="business_video_widget-3" class="widget business_video_widget_widget"><h5 class="widget-title">Événements</h5><iframe width="640" height="480" src="https://www.youtube.com/embed/C0DPdy98e4c?feature=oembed" frameborder="0" allowfullscreen></iframe></aside>
-				--></div><!-- col-1-4 -->
-
-				<div class="col-1-4">
-					<aside id="pages-3" class="widget widget_pages"><h5 class="widget-title">Navigation</h5>		<ul>
-						<li class="page_item page-item-17"><a href="{{ path('front_homepage')}}">Accueil</a></li>
-						<li class="page_item page-item-34"><a href="#etudiant">Étudiant</a></li>
-						<li class="page_item page-item-28"><a href="#fondateurs">Nos Fondateurs</a></li>
-						<li class="page_item page-item-44"><a href="#nous_contacter">Nous contacter</a></li>
-						<li class="page_item page-item-42"><a href="#nous_soutenir">Nous soutenir</a></li>
-						<!--<li class="page_item page-item-40"><a href="#pro">Professionnel</a></li>-->
-					</ul>
-				</aside>
-			</div><!-- col-1-4 -->
+	<div class="col-1-4">
+	<aside id="business_contact_info-3" class="widget business_contact_info_widget"><h5 class="widget-title">Nous Contacter</h5><div class="contact-address"><span>Address: </span>53 avenue des ternes 75017 Paris</div><div class="contact-phone"><span>Phone: </span>0951062304</div><div class="contact-email"><span>Email: </span><a href="mailto:info@hworkers.fr">info@hworkers.fr</a></div></aside>                </div><!-- col-1-4 -->
 
 
-			<div  class="col-1-4">
+	<div class="col-1-4">
+	<!--	<aside id="business_video_widget-3" class="widget business_video_widget_widget"><h5 class="widget-title">Événements</h5><iframe width="640" height="480" src="https://www.youtube.com/embed/C0DPdy98e4c?feature=oembed" frameborder="0" allowfullscreen></iframe></aside>
+	--></div><!-- col-1-4 -->
 
-				<ul class='social-media-icons'>            <li>
-					<a href="http://twitter.com/">
-						<i class="fa fa-twitter"></i>                </a>
-					</li>            <li>
-						<a href="http://facebook.com/">
-							<i class="fa fa-facebook"></i>                </a>
-						</li>            <li>
-							<a href="http://google.com/">
-								<i class="fa fa-google-plus"></i>                </a>
-							</li> <br/>           <li>
-								<a href="http://pinterest.com/">
-									<i class="fa fa-pinterest"></i>                </a>
-								</li>            <li>
-									<a href="http://youtube.com/">
-										<i class="fa fa-youtube"></i>                </a>
-									</li>            <li>
-										<a href="http://linkedin.com/">
-											<i class="fa fa-linkedin"></i>                </a>
-										</li></ul></div>
-									</div><!-- grid -->
-
-									<div class="grid grid-pad">
-										<div class="site-info col-1-1"></span>
-											© 2016 HardWorkers
+	<div class="col-1-4">
+	<aside id="pages-3" class="widget widget_pages"><h5 class="widget-title">Navigation</h5>		<ul>
+	<li class="page_item page-item-17"><a href="{{ path('front_homepage')}}">Accueil</a></li>
+	<li class="page_item page-item-34"><a href="{{ path('front_homepage')}}#etudiant">Étudiant</a></li>
+	<li class="page_item page-item-28"><a href ="{{ path('front_homepage')}}#fondateurs" onclick="window.location.href='{{ path('front_homepage')}}#fondateurs'">Nos Fondateurs</a></li>
+	<li class="page_item page-item-44"><a href="#nous_contacter">Nous contacter</a></li>
+	<li class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nous_soutenir" onclick="window.location.href='{{ path('front_homepage')}}#nous_soutenir'">Nous soutenir</a></li>
+	<li class="page_item page-item-40"><a href ="{{ path('front_homepage')}}#news" onclick="window.location.href='{{ path('front_homepage')}}#news'">News</a></li>
+	</ul>
+	</aside>
+	</div><!-- col-1-4 -->
 
 
-										</div><!-- .site-info -->
-									</div><!-- grid -->
+	<div  class="col-1-4">
 
-								</footer><!-- #colophon -->
+	<ul class='social-media-icons'>            <li>
+	<a href="http://twitter.com/">
+	<i class="fa fa-twitter"></i>                </a>
+	</li>            <li>
+	<a target="_blank" href="https://www.facebook.com/HWorkers">
+	<i class="fa fa-facebook"></i>                </a>
+	</li>            <li>
+	<a href="http://google.com/">
+	<i class="fa fa-google-plus"></i>                </a>
+	</li> <br/>           <li>
+	<a href="http://pinterest.com/">
+	<i class="fa fa-pinterest"></i>                </a>
+	</li>            <li>
+	<a href="http://youtube.com/">
+	<i class="fa fa-youtube"></i>                </a>
+	</li>            <li>
+	<a href="http://linkedin.com/">
+	<i class="fa fa-linkedin"></i>                </a>
+	</li></ul></div>
+	</div><!-- grid -->
 
-							</div><!-- #page -->
+	<div class="grid grid-pad">
+	<div class="site-info col-1-1"></span>
+	© 2016 HardWorkers
 
-							<script type='text/javascript' src='{{asset('frontt/js/business/classie67d0.js?ver=4.5.4') }}'></script>
-							<script type='text/javascript' src='{{asset('frontt/js/business/navigation11a8.js?ver=20120206') }}'></script>
-							<script type='text/javascript' src='{{asset('frontt/js/business/skip-link-focus-fix08e0.js?ver=20130115') }}'></script>
-							<script type='text/javascript' src='{{asset('frontt/js/business/codemirror67d0.js?ver=4.5.4') }}'></script>
-							<script type='text/javascript' src='{{asset('frontt/js/business/css67d0.js?ver=4.5.4') }}'></script>
-							<script type='text/javascript' src='{{asset('frontt/js/business/jquery.placeholder67d0.js?ver=4.5.4') }}'></script>
-							<script type='text/javascript' src='{{asset('frontt/js/business/placeholdertext67d0.js?ver=4.5.4') }}'></script>
-							<script type='text/javascript' src='{{asset('frontt/js/business/business.scripts67d0.js?ver=4.5.4') }}'></script>
-							<script type='text/javascript' src='{{asset('frontt/js/business/sequence.scripts67d0.js?ver=4.5.4') }}'></script>
 
-							<script type='text/javascript' src='{{asset('frontt/js/modal.js') }}'></script>
+	</div><!-- .site-info -->
+	</div><!-- grid -->
 
-							<script type="text/javascript">
-							/* <![CDATA[ */
-							var su_magnific_popup = {"close":"Close (Esc)","loading":"Loading...","prev":"Previous (Left arrow key)","next":"Next (Right arrow key)","counter":"%curr% of %total%","error":"Failed to load this link. <a href=\"%url%\" target=\"_blank\"><u>Open link<\/u><\/a>."};
-							/* ]]> */
-							</script>
-							<script type='text/javascript' src='{{asset('frontt/js/gal.min.js') }}'></script>
-							<link rel="stylesheet" id="su-galleries-shortcodes-group-css" href="https://modernthemes.net/wordpress-demo/business/wp-content/plugins/bwp-minify/min/?f=wordpress-demo/wp-content/plugins/shortcodes-ultimate/assets/css/galleries-shortcodes.css,wordpress-demo/wp-content/plugins/shortcodes-ultimate/assets/css/magnific-popup.css" type="text/css" media="all">
-						</body>
-					{% endblock %}
+	</footer><!-- #colophon -->
 
-					</html>
-				{% endblock %}
+	</div><!-- #page -->
+
+	<script type='text/javascript' src='{{asset('frontt/js/business/classie67d0.js?ver=4.5.4') }}'></script>
+	<script type='text/javascript' src='{{asset('frontt/js/business/navigation11a8.js?ver=20120206') }}'></script>
+	<script type='text/javascript' src='{{asset('frontt/js/business/skip-link-focus-fix08e0.js?ver=20130115') }}'></script>
+	<script type='text/javascript' src='{{asset('frontt/js/business/codemirror67d0.js?ver=4.5.4') }}'></script>
+	<script type='text/javascript' src='{{asset('frontt/js/business/css67d0.js?ver=4.5.4') }}'></script>
+	<script type='text/javascript' src='{{asset('frontt/js/business/jquery.placeholder67d0.js?ver=4.5.4') }}'></script>
+	<script type='text/javascript' src='{{asset('frontt/js/business/placeholdertext67d0.js?ver=4.5.4') }}'></script>
+	<script type='text/javascript' src='{{asset('frontt/js/business/business.scripts67d0.js?ver=4.5.4') }}'></script>
+	<script type='text/javascript' src='{{asset('frontt/js/business/sequence.scripts67d0.js?ver=4.5.4') }}'></script>
+
+	<script type='text/javascript' src='{{asset('frontt/js/modal.js') }}'></script>
+
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	var su_magnific_popup = {"close":"Close (Esc)","loading":"Loading...","prev":"Previous (Left arrow key)","next":"Next (Right arrow key)","counter":"%curr% of %total%","error":"Failed to load this link. <a href=\"%url%\" target=\"_blank\"><u>Open link<\/u><\/a>."};
+	/* ]]> */
+	</script>
+	<script type='text/javascript' src='{{asset('frontt/js/gal.min.js') }}'></script>
+	<link rel="stylesheet" id="su-galleries-shortcodes-group-css" href="https://modernthemes.net/wordpress-demo/business/wp-content/plugins/bwp-minify/min/?f=wordpress-demo/wp-content/plugins/shortcodes-ultimate/assets/css/galleries-shortcodes.css,wordpress-demo/wp-content/plugins/shortcodes-ultimate/assets/css/magnific-popup.css" type="text/css" media="all">
+	</body>
+	{% endblock %}
+
+	</html>
+	{% endblock %}

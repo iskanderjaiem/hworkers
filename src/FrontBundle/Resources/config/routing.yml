@@ -6,6 +6,11 @@ stages:
     path:     /stages
     defaults: { _controller: FrontBundle:Default:stages }
 
+
+galerie:
+    path:     /galerie
+    defaults: { _controller: FrontBundle:Default:galerie }
+
 stage:
     path:     /stage/{id}
     defaults: { _controller: FrontBundle:Default:stage }

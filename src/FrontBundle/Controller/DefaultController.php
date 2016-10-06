@@ -18,6 +18,12 @@ class DefaultController extends Controller
     return $this->render('FrontBundle::index.html.twig', array('entities' => $stages));
   }
 
+
+    public function galerieAction()
+    {
+      return $this->render('FrontBundle::galerie.html.twig');
+    }
+
   public function stagesAction()
   {
     $em = $this->getDoctrine()->getManager();

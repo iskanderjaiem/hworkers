@@ -1,0 +1,76 @@
+{% extends 'defaultLayout.html.twig' %}
+
+{% block currentAccueil %} class="current_page_item" {% endblock %}
+
+{% block content %}
+
+<br />
+
+<section id="galerie"></section>
+<header style=" background: url('{{asset ('frontt/images/banner.jpg')}}');" class="entry-header">
+  <div class="grid grid-pad">
+    <div class="col-1-1">
+      <h1  class="entry-title"> Galerie de photos</h1>        	</div><!-- .col-1-1 -->
+    </div><!-- .grid -->
+  </header>
+
+  <br />
+  {# change nbImages only #}
+  {% set nbImages = 12 %}
+  {% set max = nbImages / 4 + 1 %}
+  {% set j = 1  %}
+  {% for i in 1.. max %}
+  <div class="row">
+    <div class="su-custom-gallery su-custom-gallery-title-never su-lightbox-gallery">
+      <div class="col-1-6" data-index="3">&nbsp;</div>
+      {% if j <= nbImages %}
+      <div class="su-custom-gallery-slide col-1-6" data-index="0">
+        <a href="{{ asset('frontt/images/wided/' ~ j ~ '.jpg') }}" title="Photo">
+          <img src="{{ asset('frontt/images/wided/' ~ j ~ '.jpg') }}" alt="Photo" width="200" height="200">
+        </a>
+      </div>
+      {% endif %}
+      {% set j = j + 1 %}
+      {% if j <= nbImages %}
+      <div class="su-custom-gallery-slide col-1-6" data-index="0">
+        <a href="{{ asset('frontt/images/wided/' ~ j ~ '.jpg') }}" title="Photo">
+          <img src="{{ asset('frontt/images/wided/' ~ j ~ '.jpg') }}" alt="Photo" width="200" height="200">
+        </a>
+      </div>
+      {% endif %}
+      {% set j = j + 1 %}
+      {% if j <= nbImages %}
+      <div class="su-custom-gallery-slide col-1-6" data-index="0">
+        <a href="{{ asset('frontt/images/wided/' ~ j ~ '.jpg') }}" title="Photo">
+          <img src="{{ asset('frontt/images/wided/' ~ j ~ '.jpg') }}" alt="Photo" width="200" height="200">
+        </a>
+      </div> {% endif %}
+      {% set j = j + 1 %}
+      {% if j <= 13 %}
+      <div class="su-custom-gallery-slide col-1-6" data-index="0">
+        <a href="{{ asset('frontt/images/wided/' ~ j ~ '.jpg') }}" title="Photo">
+          <img src="{{ asset('frontt/images/wided/' ~ j ~ '.jpg') }}" alt="Photo" width="200" height="200">
+        </a>
+      </div>
+      {% endif %}
+      {% set j = j + 1 %}
+      <div class="su-clear">
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+    <div class="home-cta">
+      <div class="grid grid-pad">
+        <div class="col-10-12">
+          <h4>where Smart People Meat Smart Ideas </h4>
+        </div><!-- col-10-12 -->
+        <!--<div class="col-2-12 push-right">
+        <a href="indexcbc0.html?page_id=26">
+        <button>Commencer</button>
+      </a>
+    </div> -->
+  </div><!-- grid -->
+</div> <!-- home-cta -->
+</section><!-- #content -->
+{% endblock %}
