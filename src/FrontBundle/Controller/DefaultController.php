@@ -66,8 +66,8 @@ class DefaultController extends Controller
             "\n commentaire : ".$form_postuler["commentaire"]->getData();
 
       $message = \Swift_Message::newInstance()
-      ->setSubject('Stage N x')
-      ->setFrom('hworker.sender@gmail.com')
+      ->setSubject("Demande pour l'offre de stage : ".$stage->getTitre())
+      ->setFrom('iskanderjaiem@gmail.com')
       ->setTo('iskander.jaiem@esprit.tn')
       ->setBody($body)
       ->attach(\Swift_Attachment::fromPath('file/'.$file->getClientOriginalName()));
@@ -85,6 +85,38 @@ class DefaultController extends Controller
     $stage =  $query->getSingleResult();
     return $this->render('FrontBundle::stage.html.twig', array('stage' => $stage,'form_postuler'=>$form_postuler->createView()));
   }
+
+  public function adhesionAction(Request $request)
+  {
+
+        if ($request->query->get('nom')!=null && $request->query->get('email')!=null  && $request->query->get('tel')!=null /*&& $form->isValid()*/) {
+
+          $nom = $request->query->get('nom');
+          $email =$request->query->get('email');
+          $tel =$request->query->get('tel');
+          $ad =$request->query->get('adhesion');
+
+          $body=
+                "\n\n\n ***** INFORMATION SUR LES CHAMPS DU FORMULAIRE ***** ".
+                "\n Nom et prénom : ".$nom.
+                "\n Adresse Email: ".$email.
+                "\n Numéro de Tél: ".$tel.
+                "\n Type d'adhésion: ".$ad." Euros";
+
+          $message = \Swift_Message::newInstance()
+          ->setSubject("Demande d'adhésion : ".$nom)
+          ->setFrom('iskanderjaiem@gmail.com')
+          ->setTo('iskander.jaiem@esprit.tn')
+          ->setBody($body);
+          $this->get('mailer')->send($message);
+
+          return $this->render('FrontBundle::merci.html.twig');
+      }
+        $em = $this->getDoctrine()->getManager();
+        $stages = $em->getRepository('AdminBundle:Stage')->findAll();
+        return $this->render('FrontBundle::index.html.twig', array('entities' => $stages));
+    }
+
 
 
 

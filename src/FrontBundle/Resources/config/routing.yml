@@ -7,6 +7,11 @@ stages:
     defaults: { _controller: FrontBundle:Default:stages }
 
 
+adhesion:
+    path:     /adhesion
+    defaults: { _controller: FrontBundle:Default:adhesion }
+
+
 galerie:
     path:     /galerie
     defaults: { _controller: FrontBundle:Default:galerie }
