@@ -210,6 +210,20 @@
 	var su_magnific_popup = {"close":"Close (Esc)","loading":"Loading...","prev":"Previous (Left arrow key)","next":"Next (Right arrow key)","counter":"%curr% of %total%","error":"Failed to load this link. <a href=\"%url%\" target=\"_blank\"><u>Open link<\/u><\/a>."};
 	/* ]]> */
 	</script>
+
+	<script>
+
+	var button = document.getElementsByClassName("page_item");
+	for (var i=0;i<button.length;i++){
+		button[i].addEventListener('click', hideMenu);
+    }
+		function hideMenu(){
+			document.getElementById("cbp-spmenu-s1").className =
+				document.getElementById("cbp-spmenu-s1").className.replace('cbp-spmenu-open','');
+		}
+
+	</script>
+
 	<script type='text/javascript' src='{{asset('frontt/js/gal.min.js') }}'></script>
 	<link rel="stylesheet" id="su-galleries-shortcodes-group-css" href="https://modernthemes.net/wordpress-demo/business/wp-content/plugins/bwp-minify/min/?f=wordpress-demo/wp-content/plugins/shortcodes-ultimate/assets/css/galleries-shortcodes.css,wordpress-demo/wp-content/plugins/shortcodes-ultimate/assets/css/magnific-popup.css" type="text/css" media="all">
 	</body>
