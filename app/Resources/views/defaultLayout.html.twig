@@ -47,7 +47,15 @@
 	a:hover {
 		color: #f69837;
 	}
+	.partner_img {
+	    opacity: 0.5;
+	    filter: alpha(opacity=50); /* For IE8 and earlier */
+	}
 
+	.partner_img:hover {
+	    opacity: 1.0;
+	    filter: alpha(opacity=100); /* For IE8 and earlier */
+	}
 	#sequence .slide-arrow { background: #f06f2f; }
 	.main-navigation .current_page_item a, .main-navigation .current-menu-item a, .main-navigation li:hover > a, a:focus, a:active { color: #f06f2f !important; }
 	.services .fa, .social-media-icons .fa  { color: #f06f2f; }
@@ -93,13 +101,14 @@
 	<a id="showLeft" class="mobileNav push-right"><i class="fa fa-bars"></i></a>
 	<div id="main-nav">
 	<br />
-	<div class="menu" style="padding-right:8em;">
+	<div class="menu">
 	<ul>
 	<li {% block currentAccueil %}{% endblock %}><a href="{{ path('front_homepage')}}">Accueil</a></li>
 	<li {% block currentEtudiant %}{% endblock %}  class="page_item page-item-34"><a  class="scroll" href ="{{ path('front_homepage')}}#etudiant" onclick="window.location.href='{{ path('front_homepage')}}#etudiant'">Étudiant</a></li>
 	<li {% block currentPro %}{% endblock %} class="page_item page-item-40"><a href ="{{ path('front_homepage')}}#news" onclick="window.location.href='{{ path('front_homepage')}}#news'">News</a></li>
 	<li {% block currentFondateurs %}{% endblock %} class="page_item page-item-28"><a  class="scroll" href ="{{ path('front_homepage')}}#fondateurs" onclick="window.location.href='{{ path('front_homepage')}}#fondateurs'">Nos Fondateurs</a></li>
 	<li {% block currentSoutenir %}{% endblock %}class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nous_soutenir" onclick="window.location.href='{{ path('front_homepage')}}#nous_soutenir'">Nous soutenir</a></li>
+	<li class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nos_partenaires" onclick="window.location.href='{{ path('front_homepage')}}#nos_partenaires'">Nos partenaires</a></li>
 	<li {% block currentContact %}{% endblock %}class="page_item page-item-44"><a  class="scroll"  href ="{{ path('front_homepage')}}#contacter" onclick="window.location.href='{{ path('front_homepage')}}#contacter'">Nous contacter</a></li>
 	</ul>
 	</div>
@@ -119,6 +128,7 @@
 	<li class="page_item page-item-34"><a href="{{ path('front_homepage')}}#etudiant">Étudiant</a></li>
 	<li class="page_item page-item-28"><a href ="{{ path('front_homepage')}}#fondateurs" onclick="window.location.href='{{ path('front_homepage')}}#fondateurs'">Nos Fondateurs</a></li>
 	<li class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nous_soutenir" onclick="window.location.href='{{ path('front_homepage')}}#nous_soutenir'">Nous soutenir</a></li>
+	<li class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nos_partenaires" onclick="window.location.href='{{ path('front_homepage')}}#nos_partenaires'">Nos partenaires</a></li>
 	<li class="page_item page-item-44"><a href="#nous_contacter">Nous contacter</a></li>
 	</ul>
 	</div>
@@ -152,6 +162,7 @@
 	<li class="page_item page-item-28"><a href ="{{ path('front_homepage')}}#fondateurs" onclick="window.location.href='{{ path('front_homepage')}}#fondateurs'">Nos Fondateurs</a></li>
 	<li class="page_item page-item-44"><a href="#nous_contacter">Nous contacter</a></li>
 	<li class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nous_soutenir" onclick="window.location.href='{{ path('front_homepage')}}#nous_soutenir'">Nous soutenir</a></li>
+	<li class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nos_partenaires" onclick="window.location.href='{{ path('front_homepage')}}#nos_partenaires'">Nos partenaires</a></li>
 	<li class="page_item page-item-40"><a href ="{{ path('front_homepage')}}#news" onclick="window.location.href='{{ path('front_homepage')}}#news'">News</a></li>
 	</ul>
 	</aside>

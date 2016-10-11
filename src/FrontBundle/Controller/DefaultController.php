@@ -98,7 +98,7 @@ class DefaultController extends Controller
 
           $body=
                 "\n\n\n ***** INFORMATION SUR LES CHAMPS DU FORMULAIRE ***** ".
-                "\n Nom et prénom : ".$nom.
+                "\n Nom et prénom: ".$nom.
                 "\n Adresse Email: ".$email.
                 "\n Numéro de Tél: ".$tel.
                 "\n Type d'adhésion: ".$ad." Euros";
@@ -118,6 +118,33 @@ class DefaultController extends Controller
     }
 
 
+    public function contactAction(Request $request)
+    {
 
+          if ($request->query->get('nom')!=null && $request->query->get('email')!=null  && $request->query->get('msg')!=null /*&& $form->isValid()*/) {
+
+            $nom = $request->query->get('nom');
+            $email =$request->query->get('email');
+            $msg =$request->query->get('msg');
+
+            $body=
+                  "\n\n\n ***** INFORMATION SUR LES CHAMPS DU FORMULAIRE ***** ".
+                  "\n Nom et prénom: ".$nom.
+                  "\n Adresse Email: ".$email.
+                  "\n Message: ".$msg;
+
+            $message = \Swift_Message::newInstance()
+            ->setSubject("Message:" .$nom)
+            ->setFrom('iskanderjaiem@gmail.com')
+            ->setTo('iskander.jaiem@esprit.tn')
+            ->setBody($body);
+            $this->get('mailer')->send($message);
+
+            return $this->render('FrontBundle::merci2.html.twig');
+        }
+          $em = $this->getDoctrine()->getManager();
+          $stages = $em->getRepository('AdminBundle:Stage')->findAll();
+          return $this->render('FrontBundle::index.html.twig', array('entities' => $stages));
+      }
 
 }
