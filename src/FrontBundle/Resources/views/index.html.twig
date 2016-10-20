@@ -76,15 +76,27 @@
             </div>
           </div><!-- col-1-2 -->
 
-          <div class="col-1-4">
+          <div class="col-2-4">
 
             <!--<aside id="text-3" class="widget widget_text">			<div class="textwidget"><img class="aligncenter" src="{{ asset('frontt/images/dreamstime_xxl_11620953.png') }}" width="100%" ></div>
           </aside>
         -->
-        <video width="400" controls>
-          <source src="{{ asset("presentation.mp4")}}" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
+
+        <div class="su-tabs su-tabs-style-default" data-active="1"><div class="su-tabs-nav"><span class="su-tabs-current" data-url="" data-target="blank">Saraha FM</span><span class="" data-url="" data-target="blank">Radio Nationale</span></div>
+        <div class="su-tabs-panes"><div class="su-tabs-pane su-clearfix" style="display: block;">
+          <video width="400" controls>
+            <source src="{{ asset("presentation2.mp4")}}" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+<div class="su-tabs-pane su-clearfix" style="display: none;">
+  <video width="400" controls>
+    <source src="{{ asset("presentation.mp4")}}" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div></div>
+</div>
+
         </div><!-- col-1-2 -->
 
 
@@ -461,38 +473,6 @@
                         <br />
 
 
-                        <section id="nous_contacter">
-                          <header style="background: url('{{asset ('frontt/images/banner.jpg')}}')" class="entry-header">
-                            <div class="home-cta">
-                              <div class="grid grid-pad">
-                                <div class="col-10-8">
-                                  <h4>Nous contacter </h4>
-                                </div><!-- col-10-12 -->
-                                <div class="col-2-8 push-right">
-                                  <button id="BtnContact">Envoyer un message</button>
-                                </div><!-- col-2-12 -->
-                              </div><!-- grid -->
-                            </div>
-                          </header><!-- .entry-header -->
-                          <div id="myModalContact" class="modal">
-                            <div class="modal-content">
-                              <span class="close">×</span>
-                              <center>
-                                <form action="{{ path('contact')}}" metod="GET">
-                                  <h5>Formulaire de contact</h5><br/>
-                                  <div><label for="author">Nom & Prénom <span class="required">*</span></label> <input id="nom" name="nom" type="text" value="" size="30" maxlength="120" aria-required="true" required="required"></div>
-                                  <br/><div><label for="author">&nbsp;&nbsp;Adresse Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="120" aria-required="true" required="required"></div>
-                                  <br/><div><label for="author">&nbsp;Message  <span class="required">*</span></label>
-                                    <br/><textarea id="msg" name="msg" type="text" rows="4" cols="50"  aria-required="true" required="required"></textarea>
-                                  </div>
-                                  <br/><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Envoyer"> <input type="hidden" name="comment_post_ID" value="117" id="comment_post_ID">
-                                    <input type="hidden" name="comment_parent" id="comment_parent" value="0">
-                                  </p>
-                                </form>
-                              </center>
-                            </div>
-                          </div>
-                        </section><!-- #content -->
 
 
 

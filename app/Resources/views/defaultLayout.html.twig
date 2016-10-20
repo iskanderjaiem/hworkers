@@ -109,7 +109,7 @@
 	<li {% block currentFondateurs %}{% endblock %} class="page_item page-item-28"><a  class="scroll" href ="{{ path('front_homepage')}}#fondateurs" onclick="window.location.href='{{ path('front_homepage')}}#fondateurs'">Nos Fondateurs</a></li>
 	<li {% block currentSoutenir %}{% endblock %}class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nous_soutenir" onclick="window.location.href='{{ path('front_homepage')}}#nous_soutenir'">Nous soutenir</a></li>
 	<li class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nos_partenaires" onclick="window.location.href='{{ path('front_homepage')}}#nos_partenaires'">Nos partenaires</a></li>
-	<li {% block currentContact %}{% endblock %}class="page_item page-item-44"><a  class="scroll"  href ="{{ path('front_homepage')}}#contacter" onclick="window.location.href='{{ path('front_homepage')}}#contacter'">Nous contacter</a></li>
+	<li {% block currentContact %}{% endblock %}class="page_item page-item-44"><a  class="scroll"  href ="contact();" onclick="contact();">Nous contacter</a></li>
 	</ul>
 	</div>
 	</div>
@@ -136,6 +136,42 @@
 	{% block content %}
 
 	{% endblock %}
+
+	<section id="nous_contacter">
+		<header style="background: url('{{asset ('frontt/images/banner.jpg')}}')" class="entry-header">
+			<div class="home-cta">
+				<div class="grid grid-pad">
+					<div class="col-10-8">
+						<h4>Nous contacter </h4>
+					</div><!-- col-10-12 -->
+					<div class="col-2-8 push-right">
+						<button id="BtnContact">Envoyer un message</button>
+					</div><!-- col-2-12 -->
+				</div><!-- grid -->
+			</div>
+		</header><!-- .entry-header -->
+		<div id="myModalContact" class="modal">
+			<div class="modal-content">
+				<span class="close">×</span>
+				<center>
+					<form action="{{ path('contact')}}" metod="GET">
+						<h5>Formulaire de contact</h5><br/>
+						<div><label for="author">Nom & Prénom <span class="required">*</span></label> <input id="nom" name="nom" type="text" value="" size="30" maxlength="120" aria-required="true" required="required"></div>
+						<br/><div><label for="author">&nbsp;&nbsp;Adresse Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="120" aria-required="true" required="required"></div>
+						<br/><div><label for="author">&nbsp;Message  <span class="required">*</span></label>
+							<br/><textarea id="msg" name="msg" type="text" rows="4" cols="50"  aria-required="true" required="required"></textarea>
+						</div>
+						<br/><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Envoyer"> <input type="hidden" name="comment_post_ID" value="117" id="comment_post_ID">
+							<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+					</form>
+				</center>
+			</div>
+		</div>
+	</section><!-- #content -->
+
+
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="grid grid-pad">
 	<div class="col-1-4">
@@ -160,7 +196,7 @@
 	<li class="page_item page-item-17"><a href="{{ path('front_homepage')}}">Accueil</a></li>
 	<li class="page_item page-item-34"><a href="{{ path('front_homepage')}}#etudiant">Étudiant</a></li>
 	<li class="page_item page-item-28"><a href ="{{ path('front_homepage')}}#fondateurs" onclick="window.location.href='{{ path('front_homepage')}}#fondateurs'">Nos Fondateurs</a></li>
-	<li class="page_item page-item-44"><a href="#nous_contacter">Nous contacter</a></li>
+	<li class="page_item page-item-44"><a onclick="contact()">Nous contacter</a></li>
 	<li class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nous_soutenir" onclick="window.location.href='{{ path('front_homepage')}}#nous_soutenir'">Nous soutenir</a></li>
 	<li class="page_item page-item-42"><a href ="{{ path('front_homepage')}}#nos_partenaires" onclick="window.location.href='{{ path('front_homepage')}}#nos_partenaires'">Nos partenaires</a></li>
 	<li class="page_item page-item-40"><a href ="{{ path('front_homepage')}}#news" onclick="window.location.href='{{ path('front_homepage')}}#news'">News</a></li>
@@ -233,6 +269,9 @@
 				document.getElementById("cbp-spmenu-s1").className.replace('cbp-spmenu-open','');
 		}
 
+		function contact(){
+			document.getElementById("BtnContact").click();
+		}
 	</script>
 
 	<script type='text/javascript' src='{{asset('frontt/js/gal.min.js') }}'></script>
